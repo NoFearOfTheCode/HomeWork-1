@@ -1,0 +1,8 @@
+c:\users\andrey\documents\visual studio 2015\Projects\CatShop.MITa\Viev\bin\Debug\Viev.exe.config
+c:\users\andrey\documents\visual studio 2015\Projects\CatShop.MITa\Viev\bin\Debug\Viev.exe
+c:\users\andrey\documents\visual studio 2015\Projects\CatShop.MITa\Viev\bin\Debug\Viev.pdb
+c:\users\andrey\documents\visual studio 2015\Projects\CatShop.MITa\Viev\obj\Debug\View.csprojResolveAssemblyReference.cache
+c:\users\andrey\documents\visual studio 2015\Projects\CatShop.MITa\Viev\obj\Debug\Viev.exe
+c:\users\andrey\documents\visual studio 2015\Projects\CatShop.MITa\Viev\obj\Debug\Viev.pdb
+c:\users\andrey\documents\visual studio 2015\Projects\CatShop.MITa\Viev\bin\Debug\Model.dll
+c:\users\andrey\documents\visual studio 2015\Projects\CatShop.MITa\Viev\bin\Debug\Model.pdb
