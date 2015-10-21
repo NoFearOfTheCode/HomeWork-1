@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,26 +11,22 @@ namespace Model
         //Где можно прочитать про правильную компановку класса? 
         private int _heath;
         private string _name;
+        private readonly string _age; //Age - String????
         public string CurrentColor;
-
-        /// <summary>
-        /// read only Property;
-        /// </summary>
-        private string Age { get; set; } //Age - String????
-        /// <summary>
-        /// read/write property;
-        /// </summary>
         public CatColor Color { get; set; }
-
-        public Cat(string age)
+        
+        public Cat(string age, CatColor color)
         {
             _heath = 5;
-            Age = age;
+            _age = age;
+            Color = color;
         }
 
-        /// <summary>
-        /// write first Property;
-        /// </summary>
+        public string GetAge()
+        {
+            return _age;
+        }
+
         public string Name
         {
             get { return _name; }
