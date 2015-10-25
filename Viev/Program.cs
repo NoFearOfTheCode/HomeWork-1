@@ -11,16 +11,15 @@ namespace Viev
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Здравствуйте, вас приветствует программа электронная кошка!");
-            Console.Write("Введите желаемый возвраст кошки: ");
-            var age = Console.ReadLine();
+            Console.Write("Здравствуйте, вас приветствует программа \"Электронная кошка!\" \n\n" +
+                              "Введите желаемый возвраст кошки: ");
 
+            var age = Console.ReadLine();
             var catColor = new CatColor
             {
                 HeathyColor = "Белый",
                 SickColor = "Зелёный"
             };
-
             var cat = new Cat(age, catColor);
             cat.CurrentColor = cat.Color.HeathyColor;
 
@@ -28,24 +27,19 @@ namespace Viev
             while (true)
             {
                 Console.Clear();
-                Console.WriteLine("Состояние кошки");
-                Console.WriteLine("Имя кошки: {0}", cat.Name);
-                Console.WriteLine("Возраст кошки: {0}", cat.GetAge());
-                Console.WriteLine("Текущий цвет кошки: {0}", cat.CurrentColor);
-                Console.WriteLine();
+                Console.WriteLine("Состояние кошки:\n Имя кошки: {0}\n Возраст кошки: {1}\n Текущий цвет кошки: {2}\n",
+                        cat.Name, cat.GetAge(), cat.CurrentColor);
 
-                Console.WriteLine("Вводите команды для перемещения по меню программы");
-                Console.WriteLine("1) Задать имя");
-                Console.WriteLine("2) Задать цвет");
-                Console.WriteLine("3) Ударить");
-                Console.WriteLine("4) Покормить");
-                Console.WriteLine("5) Выйти из программы");
+                Console.WriteLine("Вводите команды для перемещения по меню программы:");
+                Console.WriteLine("1) Задать имя \n" + "2) Задать цвет \n" + "3) Ударить \n" + "4) Покормить \n" +
+                                  "5) Выйти из программы \n");
 
                 var switch1 = 0;
                 try
                 {
                     switch1 = int.Parse(Console.ReadLine());
-                }catch (Exception){}
+                }
+                catch (Exception){/* ignored*/}
 
                 switch (switch1)
                 {
@@ -60,7 +54,6 @@ namespace Viev
                         else
                         {
                             Console.WriteLine("Изивините, у вашей кошки уже есть имя, она должна привыкнуть к нему!");
-                            //Хотя кошкам без разницы, они идут на голос, а не на имя.
                             Console.WriteLine("Нажмите любую клавишу для продолжения");    
                             Console.ReadKey();
                         }
@@ -72,6 +65,7 @@ namespace Viev
                         cat.Color.HeathyColor = Console.ReadLine();
                         Console.Write("Введите цвет больной кошки: ");
                         cat.Color.SickColor = Console.ReadLine();
+                        cat.Feed(); cat.Punish(); //Проверка текщего цвета, что бы не создавать новую функцию.       
                         break;
                     }
                     case 3:
