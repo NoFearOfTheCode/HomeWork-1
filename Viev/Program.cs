@@ -14,21 +14,20 @@ namespace Viev
             Console.Write("Здравствуйте, вас приветствует программа \"Электронная кошка!\" \n\n" +
                               "Введите желаемый возвраст кошки: ");
 
-            var age = Console.ReadLine();
+            var age = int.Parse(Console.ReadLine());
             var catColor = new CatColor
             {
                 HeathyColor = "Белый",
                 SickColor = "Зелёный"
             };
             var cat = new Cat(age, catColor);
-            cat.CurrentColor = cat.Color.HeathyColor;
 
             var flag1 = 0;
             while (true)
             {
                 Console.Clear();
                 Console.WriteLine("Состояние кошки:\n Имя кошки: {0}\n Возраст кошки: {1}\n Текущий цвет кошки: {2}\n",
-                        cat.Name, cat.GetAge(), cat.CurrentColor);
+                        cat.Name, cat.Age, cat.CurrentColor);
 
                 Console.WriteLine("Вводите команды для перемещения по меню программы:");
                 Console.WriteLine("1) Задать имя \n" + "2) Задать цвет \n" + "3) Ударить \n" + "4) Покормить \n" +
@@ -64,8 +63,7 @@ namespace Viev
                         Console.Write("Введите цвет здоровой кошки: ");
                         cat.Color.HeathyColor = Console.ReadLine();
                         Console.Write("Введите цвет больной кошки: ");
-                        cat.Color.SickColor = Console.ReadLine();
-                        cat.Feed(); cat.Punish(); //Проверка текщего цвета, что бы не создавать новую функцию.       
+                        cat.Color.SickColor = Console.ReadLine();  
                         break;
                     }
                     case 3:
