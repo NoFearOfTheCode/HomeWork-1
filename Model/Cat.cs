@@ -8,24 +8,18 @@ namespace Model
 {
     public class Cat
     {
-        //Где можно прочитать про правильную компановку класса? 
-        private int _heath;
-        private string _name;
-        private readonly string _age; //Age - String????
-        public string CurrentColor;
-        public CatColor Color { get; set; }
-        
-        public Cat(string age, CatColor color)
+        public Cat(int age, CatColor color)
         {
             _heath = 5;
-            _age = age;
+            Age = age;
             Color = color;
         }
 
-        public string GetAge()
-        {
-            return _age;
-        }
+        private int _heath;
+        private string _name;
+        public int Age { get; }
+        public CatColor Color { get; set; }
+        public string CurrentColor => _heath >= 5 ? Color.HeathyColor : Color.SickColor;
 
         public string Name
         {
@@ -46,19 +40,11 @@ namespace Model
         public void Feed()
         {
             _heath++;
-            if (_heath >= 5)
-            {
-                CurrentColor = Color.HeathyColor;
-            }
         }
 
         public void Punish()
         {
             _heath--;
-            if (_heath < 5)
-            {
-                CurrentColor = Color.SickColor;
-            }
         }
     }
 }
